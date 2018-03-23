@@ -365,7 +365,7 @@ void cHistogram::setupRangeInteger()
 void cHistogram::setupRangeDouble()
 {
     if (num_cells == -1)
-        num_cells = 30; // to allow merging every 2, 3, 5, 6 adjacent cells in post-processing
+        num_cells = 100; // to allow merging every 2, 3, 5, 6 adjacent cells in post-processing
     cellsize = (rangemax - rangemin) / num_cells;
 }
 
@@ -484,4 +484,3 @@ cDoubleHistogram& cDoubleHistogram::operator=(const cDoubleHistogram& res)
 }
 
 NAMESPACE_END
-

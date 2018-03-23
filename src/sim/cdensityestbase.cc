@@ -38,9 +38,9 @@ using std::ostream;
 
 cDensityEstBase::cDensityEstBase(const char *name) : cStdDev(name)
 {
-    range_mode = RANGE_AUTO;
-    num_firstvals = 100;
-    range_ext_factor = 2.0;
+    range_mode = RANGE_AUTOUPPER;
+    num_firstvals = 10000;
+    range_ext_factor = 1.0;
     rangemin = rangemax = 0;
     cell_under = cell_over = 0;
     transfd = false;
@@ -179,8 +179,8 @@ void cDensityEstBase::clearResult()
 
     transfd = false;
     range_mode = RANGE_AUTO;
-    num_firstvals = 100;
-    range_ext_factor = 2.0;
+    num_firstvals = 10000;
+    range_ext_factor = 1.0;
     rangemin = rangemax = 0;
     cell_under = cell_over = 0;
 
@@ -427,4 +427,3 @@ const cDensityEstBase::Cell& cDensityEstBase::internalGetCellInfo(int k) const
 }
 
 NAMESPACE_END
-
